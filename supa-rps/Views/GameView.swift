@@ -85,7 +85,7 @@ struct GameView: View {
             } else if scoreTitle == "You win" {
                 Text("You earn 50 points!")
             } else {
-                Text("You lose 20 points!")
+                Text("You lose 30 points!")
             }
         }
     }
@@ -119,13 +119,13 @@ struct GameView: View {
         
         // draw = player gains 10 points
         // win  = player gains 50 points
-        // lose = player loses 20 points
+        // lose = player loses 30 points
         if scoreTitle == "Draw" {
             score += 10
         } else if scoreTitle == "You win" {
             score += 50
         } else {
-            score -= 20
+            score -= 30
         }
     }
 }
