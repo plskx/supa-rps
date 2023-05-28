@@ -11,7 +11,9 @@ struct LoginView: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
+    
     @State private var loginFormError = LoginFormError()
+    @State private var errorDescription = ""
     
     var body: some View {
         VStack {
@@ -37,14 +39,19 @@ struct LoginView: View {
                         .foregroundColor(.red)
                         .padding(-15)
                 }
+                
+                if !errorDescription.isEmpty {
+                    Text(errorDescription)
+                        .foregroundColor(.red)
+                        .padding(-15)
+                }
             }
             
             VStack(spacing: 15) {
                 Button("Login") {
                     if isFormValid {
                         print("Login form is valid!")
-                        isLoggedIn = true // temporary logged in the user when form is valid.
-                        #warning("add supabase")
+                        login() // supabase login
                     } else {
                         print("Login form not valid")
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -55,7 +62,7 @@ struct LoginView: View {
                 .styledButton()
                 
                 HStack {
-                    NavigationLink(destination: SignUpAccountView()) {
+                    NavigationLink(destination: RegisterView()) {
                         Text("Need an account?")
                             .foregroundColor(.black)
                         Text("Sign up!")
@@ -89,6 +96,22 @@ struct LoginView: View {
         return loginFormError.email.isEmpty && loginFormError.password.isEmpty
     }
     
+    private func login() {
+        Task {
+            do {
+                try await client.auth.signIn(email: email, password: password)
+                self.isLoggedIn = true;
+                print("Successful logged in!")
+            } catch {
+                print("Error signing in: \(error)")
+                errorDescription = error.localizedDescription
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    errorDescription = ""
+                    password = ""
+                }
+            }
+        }
+    }
     // --- end LoginView ---
 }
 

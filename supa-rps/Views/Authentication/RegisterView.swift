@@ -5,12 +5,19 @@
 
 
 import SwiftUI
+import GoTrue
 
-struct SignUpAccountView: View {
+struct RegisterView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+    
     @State private var loginFormError = LoginFormError()
+    @State private var alertDescription = ""
+    @State private var successful: Bool = false
     
     var body: some View {
         VStack {
@@ -47,11 +54,19 @@ struct SignUpAccountView: View {
                         .foregroundColor(.red)
                         .padding(-15)
                 }
+                
+                if !alertDescription.isEmpty {
+                    Text(alertDescription)
+                        .foregroundColor(!successful ? .red : .green)
+                        .font(.title2)
+                        .padding(-15)
+                }
             }
             
             Button("Register") {
                 if isFormValid {
                     print("Register form is valid!")
+                    register()
                 } else {
                     print("Register form not valid")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -69,14 +84,7 @@ struct SignUpAccountView: View {
     
     private func clearForm() {
         loginFormError = LoginFormError()
-    }
-    
-    private func isValidUsername(_ username: String) -> Bool {
-        // Username should:
-        // - contain at least 3 characters
-        // - no spaces
-        // - no '@' symbol
-        return username.count >= 3 && !username.contains(" ") && !username.contains("@")
+        alertDescription = ""
     }
     
     private var isFormValid: Bool {
@@ -84,7 +92,11 @@ struct SignUpAccountView: View {
         
         if username.isEmpty {
             loginFormError.username = "Username is required."
-        } else if !isValidUsername(username) {
+        } else if !username.isValidUsername {
+            // Username should:
+            // - contain at least 3 characters
+            // - no spaces
+            // - no '@' symbol
             loginFormError.username = "Invalid username."
         }
         
@@ -96,17 +108,58 @@ struct SignUpAccountView: View {
         
         if password.isEmpty {
             loginFormError.password = "Password is required."
+        } else if !password.isValidPassword {
+            loginFormError.password = "Password must be 6 or more characters."
         }
         
         return loginFormError.username.isEmpty && loginFormError.email.isEmpty && loginFormError.password.isEmpty
     }
     
-    // --- end LoginView ---
+    private func register() {
+        Task {
+            do {
+                let registerAuthResponse = try await client.auth.signUp(
+                    email: email,
+                    password: password,
+                    data: [
+                        "username": AnyJSON.string(username)
+                    ]
+                )
+                
+                if let session = registerAuthResponse.session {
+                    // Registration successful, process the session
+                    print("session: \(session)")
+                    successful = true
+                    alertDescription = "Successful register! now try to login!"
+                    username = ""
+                    email = ""
+                    password = ""
+                } else {
+                    // No session when registering user
+                    print("No session when registering the user")
+                    throw RegistrationError.noSession
+                }
+                
+            } catch {
+                print("Error registering: \(error)")
+                alertDescription = error.localizedDescription
+                
+                // Clear form fields and error message after a delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    alertDescription = ""
+                    username = ""
+                    password = ""
+                }
+            }
+        }
+    }
+    
+    // --- end RegisterView ---
 }
 
 struct SignUpAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpAccountView()
+        RegisterView()
             .padding()
     }
 }

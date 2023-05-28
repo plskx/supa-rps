@@ -15,11 +15,18 @@
 		904E275D2A2340750031E015 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E275C2A2340750031E015 /* MainView.swift */; };
 		904E275F2A2340C10031E015 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E275E2A2340C10031E015 /* LoginView.swift */; };
 		904E27612A2340E50031E015 /* LoginFormError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27602A2340E50031E015 /* LoginFormError.swift */; };
-		904E27632A2341130031E015 /* SignUpAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27622A2341130031E015 /* SignUpAccountView.swift */; };
+		904E27632A2341130031E015 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27622A2341130031E015 /* RegisterView.swift */; };
 		904E27662A23416C0031E015 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27652A23416C0031E015 /* String+Extensions.swift */; };
 		904E27682A2344D80031E015 /* ButtonStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27672A2344D80031E015 /* ButtonStyleModifier.swift */; };
 		904E276A2A2352080031E015 /* FieldStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27692A2352080031E015 /* FieldStyleModifier.swift */; };
 		904E276C2A2358990031E015 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E276B2A2358990031E015 /* View+Extensions.swift */; };
+		9056732D2A23A69100CC8B88 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056732C2A23A69100CC8B88 /* User.swift */; };
+		9056732F2A23A76200CC8B88 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056732E2A23A76200CC8B88 /* Leaderboard.swift */; };
+		905673312A23A82100CC8B88 /* MatchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905673302A23A82100CC8B88 /* MatchHistory.swift */; };
+		905673342A23AA2900CC8B88 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905673332A23AA2900CC8B88 /* SupabaseClient.swift */; };
+		905673372A23AAD100CC8B88 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 905673362A23AAD100CC8B88 /* Supabase */; };
+		9056733A2A23ABC300CC8B88 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905673392A23ABC300CC8B88 /* UserService.swift */; };
+		905673412A23E4FA00CC8B88 /* RegistrationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905673402A23E4FA00CC8B88 /* RegistrationError.swift */; };
 		9086FF8E2A0D46C3008E95F6 /* GradientTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086FF8D2A0D46C3008E95F6 /* GradientTitleModifier.swift */; };
 		9086FF912A0D4B1E008E95F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086FF902A0D4B1E008E95F6 /* HomeView.swift */; };
 		9086FF932A0D4C36008E95F6 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086FF922A0D4C36008E95F6 /* LeaderboardView.swift */; };
@@ -38,11 +45,17 @@
 		904E275C2A2340750031E015 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		904E275E2A2340C10031E015 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		904E27602A2340E50031E015 /* LoginFormError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormError.swift; sourceTree = "<group>"; };
-		904E27622A2341130031E015 /* SignUpAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAccountView.swift; sourceTree = "<group>"; };
+		904E27622A2341130031E015 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		904E27652A23416C0031E015 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		904E27672A2344D80031E015 /* ButtonStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleModifier.swift; sourceTree = "<group>"; };
 		904E27692A2352080031E015 /* FieldStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldStyleModifier.swift; sourceTree = "<group>"; };
 		904E276B2A2358990031E015 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		9056732C2A23A69100CC8B88 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9056732E2A23A76200CC8B88 /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
+		905673302A23A82100CC8B88 /* MatchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchHistory.swift; sourceTree = "<group>"; };
+		905673332A23AA2900CC8B88 /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
+		905673392A23ABC300CC8B88 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		905673402A23E4FA00CC8B88 /* RegistrationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationError.swift; sourceTree = "<group>"; };
 		9086FF8D2A0D46C3008E95F6 /* GradientTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTitleModifier.swift; sourceTree = "<group>"; };
 		9086FF902A0D4B1E008E95F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9086FF922A0D4C36008E95F6 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				905673372A23AAD100CC8B88 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,14 +131,49 @@
 			isa = PBXGroup;
 			children = (
 				904E275E2A2340C10031E015 /* LoginView.swift */,
-				904E27622A2341130031E015 /* SignUpAccountView.swift */,
+				904E27622A2341130031E015 /* RegisterView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		9056732B2A2397DF00CC8B88 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9056732C2A23A69100CC8B88 /* User.swift */,
+				9056732E2A23A76200CC8B88 /* Leaderboard.swift */,
+				905673302A23A82100CC8B88 /* MatchHistory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		905673322A23A9C700CC8B88 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				905673332A23AA2900CC8B88 /* SupabaseClient.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		905673382A23ABA200CC8B88 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				905673392A23ABC300CC8B88 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9056733F2A23E4EA00CC8B88 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				905673402A23E4FA00CC8B88 /* RegistrationError.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		9086FF8C2A0D46AC008E95F6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9056733F2A23E4EA00CC8B88 /* Enums */,
 				905673272A2391A300CC8B88 /* Helpers */,
 				905673262A23919900CC8B88 /* Modifiers */,
 			);
@@ -160,6 +209,9 @@
 		90A816F32A0965A3006E0F04 /* supa-rps */ = {
 			isa = PBXGroup;
 			children = (
+				905673382A23ABA200CC8B88 /* Services */,
+				905673322A23A9C700CC8B88 /* Lib */,
+				9056732B2A2397DF00CC8B88 /* Models */,
 				904E27642A2341540031E015 /* Extensions */,
 				9086FF8F2A0D4ACE008E95F6 /* Views */,
 				9086FF8C2A0D46AC008E95F6 /* Utils */,
@@ -195,6 +247,9 @@
 			dependencies = (
 			);
 			name = "supa-rps";
+			packageProductDependencies = (
+				905673362A23AAD100CC8B88 /* Supabase */,
+			);
 			productName = "supa-rps";
 			productReference = 90A816F12A0965A3006E0F04 /* supa-rps.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +278,9 @@
 				Base,
 			);
 			mainGroup = 90A816E82A0965A3006E0F04;
+			packageReferences = (
+				905673352A23AAD100CC8B88 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 90A816F22A0965A3006E0F04 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -256,8 +314,10 @@
 				904E275D2A2340750031E015 /* MainView.swift in Sources */,
 				9086FF8E2A0D46C3008E95F6 /* GradientTitleModifier.swift in Sources */,
 				900754C92A0DAC1E007C5E72 /* SettingsView.swift in Sources */,
+				9056733A2A23ABC300CC8B88 /* UserService.swift in Sources */,
 				9017FB8D2A0D37DE005C35B8 /* TabBarView.swift in Sources */,
 				904E275F2A2340C10031E015 /* LoginView.swift in Sources */,
+				9056732F2A23A76200CC8B88 /* Leaderboard.swift in Sources */,
 				9086FF912A0D4B1E008E95F6 /* HomeView.swift in Sources */,
 				9086FF932A0D4C36008E95F6 /* LeaderboardView.swift in Sources */,
 				904E276C2A2358990031E015 /* View+Extensions.swift in Sources */,
@@ -265,8 +325,12 @@
 				90A816F52A0965A3006E0F04 /* supa_rpsApp.swift in Sources */,
 				904E276A2A2352080031E015 /* FieldStyleModifier.swift in Sources */,
 				9008F24D2A0E52EF005BCF31 /* ChoiceImage.swift in Sources */,
-				904E27632A2341130031E015 /* SignUpAccountView.swift in Sources */,
+				905673312A23A82100CC8B88 /* MatchHistory.swift in Sources */,
+				905673342A23AA2900CC8B88 /* SupabaseClient.swift in Sources */,
+				904E27632A2341130031E015 /* RegisterView.swift in Sources */,
 				900754C52A0DABD4007C5E72 /* GameView.swift in Sources */,
+				9056732D2A23A69100CC8B88 /* User.swift in Sources */,
+				905673412A23E4FA00CC8B88 /* RegistrationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +529,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		905673352A23AAD100CC8B88 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		905673362A23AAD100CC8B88 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 905673352A23AAD100CC8B88 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 90A816E92A0965A3006E0F04 /* Project object */;
 }

@@ -5,13 +5,14 @@
 
 
 import SwiftUI
+import GoTrue
 
 struct ContentView: View {
     @State private var isLoggedIn: Bool = false;
-    @State private var email = ""
+    
     var body: some View {
         if isLoggedIn {
-            MainView()
+            MainView(isLoggedIn: $isLoggedIn)
         } else {
             NavigationView {
                 LoginView(isLoggedIn: $isLoggedIn)

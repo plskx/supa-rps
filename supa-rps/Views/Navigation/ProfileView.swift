@@ -6,23 +6,11 @@
 
 import SwiftUI
 
-struct Match: Hashable {
-    let userMove: String
-    let computerMove: String
-    let winner: String
-}
-
-let match1 = Match(userMove: "Rock", computerMove: "Paper", winner: "Computer")
-let match2 = Match(userMove: "Scissors", computerMove: "Scissors", winner: "Tie")
-let match3 = Match(userMove: "Paper", computerMove: "Scissors", winner: "Computer")
-let matchHistory = [match1, match2, match3]
-
 struct ProfileView: View {
     let username: String = "JohnDoe"
     let currentRound: Int = 5
     let totalWins: Int = 3
     let totalLosses: Int = 2
-    let history = matchHistory
     
     var body: some View {
         VStack {

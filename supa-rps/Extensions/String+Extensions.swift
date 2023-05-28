@@ -14,5 +14,13 @@ extension String {
         return predicate.evaluate(with: self)
     }
     
+    var isValidUsername: Bool {
+        return self.count >= 3 && !self.contains(" ") && !self.contains("@")
+    }
+    
+    var isValidPassword: Bool {
+        return self.count >= 6
+    }
+    
 }
 

@@ -7,13 +7,45 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Binding var isLoggedIn: Bool
+    
     var body: some View {
-        Text("Settings View")
+        
+        VStack {
+            Text("Settings View")
+                .gradientTitle()
+            
+            Spacer()
+            
+            Button("Logout") {
+                logout()
+            }
+            .styledButton()
+            
+            Spacer()
+        }
     }
+    
+    // MARK: funcs below
+    
+    private func logout() {
+        Task {
+            do {
+                try await client.auth.signOut()
+                self.isLoggedIn = false
+                print("Successful logout!")
+            }
+            catch {
+                print("Error signing out: \(error)")
+            }
+        }
+    }
+    
+    // --- end SettingsView ---
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(isLoggedIn: .constant(true))
     }
 }
