@@ -7,30 +7,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: Tab = .game
-    
+    @State private var isLoggedIn: Bool = false;
+    @State private var email = ""
     var body: some View {
-        VStack(spacing: 70) {
-            Spacer()
-            
-            switch selectedTab {
-            case .home:
-                HomeView()
-            case .leaderboard:
-                LeaderboardView()
-            case .game:
-                GameView()
-            case .profile:
-                ProfileView()
-            case .settings:
-                SettingsView()
+        if isLoggedIn {
+            AppMainView()
+        } else {
+            NavigationView {
+                LoginView(isLoggedIn: $isLoggedIn)
+                    .padding()
             }
-            
-            Spacer()
-            
-            TabBarView(selectedTab: $selectedTab)
         }
-        .padding(.horizontal)
     }
 }
 

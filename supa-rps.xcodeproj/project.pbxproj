@@ -12,6 +12,14 @@
 		900754C92A0DAC1E007C5E72 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900754C82A0DAC1E007C5E72 /* SettingsView.swift */; };
 		9008F24D2A0E52EF005BCF31 /* ChoiceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9008F24C2A0E52EF005BCF31 /* ChoiceImage.swift */; };
 		9017FB8D2A0D37DE005C35B8 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9017FB8C2A0D37DE005C35B8 /* TabBarView.swift */; };
+		904E275D2A2340750031E015 /* AppMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E275C2A2340750031E015 /* AppMainView.swift */; };
+		904E275F2A2340C10031E015 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E275E2A2340C10031E015 /* LoginView.swift */; };
+		904E27612A2340E50031E015 /* LoginFormError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27602A2340E50031E015 /* LoginFormError.swift */; };
+		904E27632A2341130031E015 /* SignUpAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27622A2341130031E015 /* SignUpAccountView.swift */; };
+		904E27662A23416C0031E015 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27652A23416C0031E015 /* String+Extensions.swift */; };
+		904E27682A2344D80031E015 /* ButtonStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27672A2344D80031E015 /* ButtonStyleModifier.swift */; };
+		904E276A2A2352080031E015 /* FieldStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E27692A2352080031E015 /* FieldStyleModifier.swift */; };
+		904E276C2A2358990031E015 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E276B2A2358990031E015 /* View+Extensions.swift */; };
 		9086FF8E2A0D46C3008E95F6 /* GradientTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086FF8D2A0D46C3008E95F6 /* GradientTitleModifier.swift */; };
 		9086FF912A0D4B1E008E95F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086FF902A0D4B1E008E95F6 /* HomeView.swift */; };
 		9086FF932A0D4C36008E95F6 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086FF922A0D4C36008E95F6 /* LeaderboardView.swift */; };
@@ -27,6 +35,14 @@
 		900754C82A0DAC1E007C5E72 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9008F24C2A0E52EF005BCF31 /* ChoiceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceImage.swift; sourceTree = "<group>"; };
 		9017FB8C2A0D37DE005C35B8 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		904E275C2A2340750031E015 /* AppMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainView.swift; sourceTree = "<group>"; };
+		904E275E2A2340C10031E015 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		904E27602A2340E50031E015 /* LoginFormError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormError.swift; sourceTree = "<group>"; };
+		904E27622A2341130031E015 /* SignUpAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAccountView.swift; sourceTree = "<group>"; };
+		904E27652A23416C0031E015 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		904E27672A2344D80031E015 /* ButtonStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleModifier.swift; sourceTree = "<group>"; };
+		904E27692A2352080031E015 /* FieldStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldStyleModifier.swift; sourceTree = "<group>"; };
+		904E276B2A2358990031E015 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		9086FF8D2A0D46C3008E95F6 /* GradientTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTitleModifier.swift; sourceTree = "<group>"; };
 		9086FF902A0D4B1E008E95F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9086FF922A0D4C36008E95F6 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
@@ -48,11 +64,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		904E27642A2341540031E015 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				904E27652A23416C0031E015 /* String+Extensions.swift */,
+				904E276B2A2358990031E015 /* View+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9086FF8C2A0D46AC008E95F6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				9008F24C2A0E52EF005BCF31 /* ChoiceImage.swift */,
+				904E27602A2340E50031E015 /* LoginFormError.swift */,
 				9086FF8D2A0D46C3008E95F6 /* GradientTitleModifier.swift */,
+				904E27672A2344D80031E015 /* ButtonStyleModifier.swift */,
+				904E27692A2352080031E015 /* FieldStyleModifier.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -66,6 +94,9 @@
 				900754C62A0DABFF007C5E72 /* ProfileView.swift */,
 				900754C82A0DAC1E007C5E72 /* SettingsView.swift */,
 				9017FB8C2A0D37DE005C35B8 /* TabBarView.swift */,
+				904E275C2A2340750031E015 /* AppMainView.swift */,
+				904E275E2A2340C10031E015 /* LoginView.swift */,
+				904E27622A2341130031E015 /* SignUpAccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +120,7 @@
 		90A816F32A0965A3006E0F04 /* supa-rps */ = {
 			isa = PBXGroup;
 			children = (
+				904E27642A2341540031E015 /* Extensions */,
 				9086FF8F2A0D4ACE008E95F6 /* Views */,
 				9086FF8C2A0D46AC008E95F6 /* Utils */,
 				90A816F42A0965A3006E0F04 /* supa_rpsApp.swift */,
@@ -177,15 +209,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904E27682A2344D80031E015 /* ButtonStyleModifier.swift in Sources */,
+				904E27612A2340E50031E015 /* LoginFormError.swift in Sources */,
 				900754C72A0DABFF007C5E72 /* ProfileView.swift in Sources */,
 				90A816F72A0965A3006E0F04 /* ContentView.swift in Sources */,
+				904E275D2A2340750031E015 /* AppMainView.swift in Sources */,
 				9086FF8E2A0D46C3008E95F6 /* GradientTitleModifier.swift in Sources */,
 				900754C92A0DAC1E007C5E72 /* SettingsView.swift in Sources */,
 				9017FB8D2A0D37DE005C35B8 /* TabBarView.swift in Sources */,
+				904E275F2A2340C10031E015 /* LoginView.swift in Sources */,
 				9086FF912A0D4B1E008E95F6 /* HomeView.swift in Sources */,
 				9086FF932A0D4C36008E95F6 /* LeaderboardView.swift in Sources */,
+				904E276C2A2358990031E015 /* View+Extensions.swift in Sources */,
+				904E27662A23416C0031E015 /* String+Extensions.swift in Sources */,
 				90A816F52A0965A3006E0F04 /* supa_rpsApp.swift in Sources */,
+				904E276A2A2352080031E015 /* FieldStyleModifier.swift in Sources */,
 				9008F24D2A0E52EF005BCF31 /* ChoiceImage.swift in Sources */,
+				904E27632A2341130031E015 /* SignUpAccountView.swift in Sources */,
 				900754C52A0DABD4007C5E72 /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
