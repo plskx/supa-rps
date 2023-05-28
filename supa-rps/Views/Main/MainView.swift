@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct AppMainView: View {
+struct MainView: View {
     @State private var selectedTab: Tab = .game
     
     var body: some View {
@@ -36,6 +36,6 @@ struct AppMainView: View {
 
 struct AppMainView_Previews: PreviewProvider {
     static var previews: some View {
-        AppMainView()
+        MainView()
     }
 }

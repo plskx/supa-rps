@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var email = ""
     var body: some View {
         if isLoggedIn {
-            AppMainView()
+            MainView()
         } else {
             NavigationView {
                 LoginView(isLoggedIn: $isLoggedIn)
