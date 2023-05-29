@@ -9,7 +9,7 @@ import GoTrue
 
 struct RegisterView: View {
     
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     
     @State private var username: String = ""
     @State private var email: String = ""
@@ -129,11 +129,14 @@ struct RegisterView: View {
                 if let session = registerAuthResponse.session {
                     // Registration successful, process the session
                     print("session: \(session)")
+                    
                     successful = true
                     alertDescription = "Successful register! now try to login!"
-                    username = ""
-                    email = ""
-                    password = ""
+                    
+                    // Go back to login view after 2 secs delay
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        dismiss()
+                    }
                 } else {
                     // No session when registering user
                     print("No session when registering the user")
@@ -142,6 +145,7 @@ struct RegisterView: View {
                 
             } catch {
                 print("Error registering: \(error)")
+                
                 alertDescription = error.localizedDescription
                 
                 // Clear form fields and error message after a delay
