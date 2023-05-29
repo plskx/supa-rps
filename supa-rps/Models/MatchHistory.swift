@@ -7,7 +7,7 @@
 import Foundation
 
 struct MatchHistory: Identifiable, Codable {
-    var id: Int?
+    var id: UUID?
     var userId: UUID
     var result: Int
     var playerMove: String

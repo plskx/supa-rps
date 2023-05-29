@@ -8,6 +8,8 @@ import SwiftUI
 
 struct MainView: View {
     @Binding var isLoggedIn: Bool
+    @Binding var currentUser: User
+    
     @State private var selectedTab: Tab = .game
     
     var body: some View {
@@ -22,7 +24,7 @@ struct MainView: View {
             case .game:
                 GameView()
             case .profile:
-                ProfileView()
+                ProfileView(currentUser: $currentUser)
             case .settings:
                 SettingsView(isLoggedIn: $isLoggedIn)
             }
@@ -37,6 +39,6 @@ struct MainView: View {
 
 struct AppMainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(isLoggedIn: .constant(true))
+        MainView(isLoggedIn: .constant(true), currentUser: .constant(User.example))
     }
 }

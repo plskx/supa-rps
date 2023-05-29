@@ -7,37 +7,35 @@
 import SwiftUI
 
 struct ProfileView: View {
-    let username: String = "JohnDoe"
-    let currentRound: Int = 5
-    let totalWins: Int = 3
-    let totalLosses: Int = 2
+    @Binding var currentUser: User
     
     var body: some View {
         VStack {
-            Text(username)
-                .font(.title)
-                .padding()
+            Text(currentUser.username)
+                .gradientTitle()
             
             HStack {
                 VStack {
                     Text("Rounds")
-                    Text("\(currentRound)")
+                    Text("\(currentUser.totalRounds)")
                         .font(.headline)
                 }
                 Spacer()
                 VStack {
                     Text("Wins")
-                    Text("\(totalWins)")
+                    Text("\(currentUser.totalWins)")
                         .font(.headline)
                 }
                 Spacer()
                 VStack {
                     Text("Losses")
-                    Text("\(totalLosses)")
+                    Text("\(currentUser.totalLosses)")
                         .font(.headline)
                 }
             }
             .padding()
+            
+            Spacer()
             
             //            Text("Match History")
             //                .font(.title.bold())
@@ -68,6 +66,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(currentUser: .constant(User.example))
     }
 }

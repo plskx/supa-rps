@@ -7,7 +7,7 @@
 import Foundation
 
 struct Leaderboard: Codable {
-    var id: Int?
+    var id: UUID?
     var userId: UUID
     var lastMatch: Date
     var result: Int

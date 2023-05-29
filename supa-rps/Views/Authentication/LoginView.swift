@@ -8,6 +8,7 @@ import SwiftUI
 
 struct LoginView: View {
     @Binding var isLoggedIn: Bool
+    @Binding var currentUser: User
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -99,8 +100,13 @@ struct LoginView: View {
     private func login() {
         Task {
             do {
-                try await client.auth.signIn(email: email, password: password)
-                self.isLoggedIn = true;
+                let session = try await client.auth.signIn(email: email, password: password)
+                
+                isLoggedIn = true
+                
+                let currentUser = await getCurrentUser(id: session.user.id)
+                self.currentUser = currentUser!
+                
                 print("Successful logged in!")
             } catch {
                 print("Error signing in: \(error)")
@@ -117,7 +123,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(isLoggedIn: .constant(false))
+        LoginView(isLoggedIn: .constant(false), currentUser: .constant(User.example))
             .padding()
     }
 }

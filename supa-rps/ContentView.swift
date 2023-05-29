@@ -8,15 +8,16 @@ import SwiftUI
 import GoTrue
 
 struct ContentView: View {
-    @State private var isLoggedIn: Bool = false;
+    @State private var isLoggedIn: Bool = false
+    @State private var currentUser: User = User.error
     
     var body: some View {
         Group {
             if isLoggedIn {
-                MainView(isLoggedIn: $isLoggedIn)
+                MainView(isLoggedIn: $isLoggedIn, currentUser: $currentUser)
             } else {
                 NavigationView {
-                    LoginView(isLoggedIn: $isLoggedIn)
+                    LoginView(isLoggedIn: $isLoggedIn, currentUser: $currentUser)
                         .padding()
                 }
             }
@@ -31,6 +32,10 @@ struct ContentView: View {
             let session = try await client.auth.session
             if !session.accessToken.isEmpty {
                 // Session exists, user is logged in
+                
+                let currentUser = await getCurrentUser(id: session.user.id)
+                self.currentUser = currentUser!
+                
                 isLoggedIn = true
             }
         } catch {

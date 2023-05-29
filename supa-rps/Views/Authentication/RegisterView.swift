@@ -130,6 +130,8 @@ struct RegisterView: View {
                     // Registration successful, process the session
                     print("session: \(session)")
                     
+                    try await createAccount(id: session.user.id, username: username)
+                    
                     successful = true
                     alertDescription = "Successful register! now try to login!"
                     
@@ -152,6 +154,7 @@ struct RegisterView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     alertDescription = ""
                     username = ""
+                    email = ""
                     password = ""
                 }
             }
