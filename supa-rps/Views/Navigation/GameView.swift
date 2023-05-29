@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct GameView: View {
+    @Binding var currentUser: User
     
     @State private var isShowingScore = false
     
@@ -14,13 +15,21 @@ struct GameView: View {
     @State private var score = 0
     
     @State private var computerPick: Int = Int.random(in: 0...2)
-    @State private var playerPick = -1
+    @State private var playerPick = 0
     
     @State private var currentRound = 0
     @State private var totalWins = 0
     @State private var totalLosses = 0
     
     private let choices = ["rock", "paper", "scissor"]
+    
+    init(currentUser: Binding<User>, score: Int = 0, currentRound: Int = 0, totalWins: Int = 0, totalLosses: Int = 0) {
+        _currentUser = currentUser
+        _score = State(initialValue: currentUser.wrappedValue.totalPoints)
+        _currentRound = State(initialValue: currentUser.wrappedValue.totalRounds)
+        _totalWins = State(initialValue: currentUser.wrappedValue.totalWins)
+        _totalLosses = State(initialValue: currentUser.wrappedValue.totalLosses)
+    }
     
     var body: some View {
         VStack {
@@ -116,6 +125,7 @@ struct GameView: View {
     
     func askQuestion() {
         currentRound += 1
+        currentUser.totalRounds = currentRound
         
         // draw = player gains 10 points
         // win  = player gains 50 points
@@ -124,14 +134,26 @@ struct GameView: View {
             score += 10
         } else if scoreTitle == "You win" {
             score += 50
+            currentUser.totalWins += 1
         } else {
             score -= 30
+            currentUser.totalLosses += 1
+        }
+        currentUser.totalPoints = score
+        
+        Task {
+            do {
+                try await updateCurrentUser(user: currentUser)
+                print("# success: updated the current user data")
+            } catch {
+                print(error)
+            }
         }
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView(currentUser: .constant(User.error))
     }
 }

@@ -40,3 +40,19 @@ func getCurrentUser(id: UUID) async -> User? {
     
     return resp.first
 }
+
+func updateCurrentUser(user: User) async throws {
+    let query = client
+        .database
+        .from("users")
+        .update(values: user)
+        .eq(column: "id", value: user.id)
+    
+    do {
+        try await query.execute()
+        print("success")
+    } catch {
+        print("Error updating user account: \(error)")
+        throw error
+    }
+}

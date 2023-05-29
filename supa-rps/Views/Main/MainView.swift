@@ -22,7 +22,7 @@ struct MainView: View {
             case .leaderboard:
                 LeaderboardView()
             case .game:
-                GameView()
+                GameView(currentUser: $currentUser)
             case .profile:
                 ProfileView(currentUser: $currentUser)
             case .settings:
