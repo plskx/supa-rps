@@ -8,7 +8,7 @@ import SwiftUI
 
 struct MainView: View {
     @Binding var isLoggedIn: Bool
-    @Binding var currentUser: User
+    @Binding var currentUser: User?
     
     @State private var selectedTab: Tab = .game
     
@@ -26,7 +26,7 @@ struct MainView: View {
             case .profile:
                 ProfileView(currentUser: $currentUser)
             case .settings:
-                SettingsView(isLoggedIn: $isLoggedIn)
+                SettingsView(isLoggedIn: $isLoggedIn, currentUser: $currentUser)
             }
             
             Spacer()

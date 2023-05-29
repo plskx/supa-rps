@@ -8,7 +8,7 @@ import SwiftUI
 
 struct LoginView: View {
     @Binding var isLoggedIn: Bool
-    @Binding var currentUser: User
+    @Binding var currentUser: User?
     
     @State private var email: String = ""
     @State private var password: String = ""
