@@ -6,11 +6,11 @@
 
 import Foundation
 
-struct MatchHistory: Identifiable, Codable {
-    var id: UUID?
-    var userId: UUID
-    var result: Int
-    var playerMove: String
-    var computerMove: String
-    var timestamp: Date
-}
+// struct MatchHistory: Identifiable, Codable {
+//     var id: UUID?
+//     var userId: UUID
+//     var result: Int
+//     var playerMove: String
+//     var computerMove: String
+//     var timestamp: Date
+// }
