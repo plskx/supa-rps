@@ -11,58 +11,57 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
-            if let currentUser = currentUser {
-                Text(currentUser.username)
-                    .gradientTitle()
-                
-                HStack {
-                    VStack {
-                        Text("Rounds")
-                        Text("\(currentUser.totalRounds)")
-                            .font(.headline)
-                    }
-                    Spacer()
-                    VStack {
-                        Text("Wins")
-                        Text("\(currentUser.totalWins)")
-                            .font(.headline)
-                    }
-                    Spacer()
-                    VStack {
-                        Text("Losses")
-                        Text("\(currentUser.totalLosses)")
-                            .font(.headline)
-                    }
+            Text(currentUser?.username ?? "No Username Found")
+                .gradientTitle()
+            
+            HStack {
+                VStack {
+                    Text("Rounds")
+                    Text("\(currentUser?.totalRounds ?? 0)")
+                        .font(.headline)
                 }
-                .padding()
-                
                 Spacer()
-                
-                // TODO: add match history later
-                //            Text("Match History")
-                //                .font(.title.bold())
-                //                .padding()
-                //
-                //            VStack {
-                //                ForEach(matchHistory, id: \.self) { match in
-                //                    HStack(spacing: 70) {
-                //                        VStack {
-                //                            Text("User")
-                //                                .font(.title2.bold())
-                //                            ChoiceImage(of: "rock", 36)
-                //                        }
-                //
-                //                        Text("vs")
-                //                            .font(.title2.bold())
-                //                        VStack {
-                //                            Text("Computer")
-                //                                .font(.title2.bold())
-                //                            ChoiceImage(of: "paper", 36)
-                //                        }
-                //                    }
-                //                }
-                //            }
+                VStack {
+                    Text("Wins")
+                    Text("\(currentUser?.totalWins ?? 0)")
+                        .font(.headline)
+                }
+                Spacer()
+                VStack {
+                    Text("Losses")
+                    Text("\(currentUser?.totalLosses ?? 0)")
+                        .font(.headline)
+                }
             }
+            .padding()
+            
+            Spacer()
+            
+            // TODO: add match history later
+            //            Text("Match History")
+            //                .font(.title.bold())
+            //                .padding()
+            //
+            //            VStack {
+            //                ForEach(matchHistory, id: \.self) { match in
+            //                    HStack(spacing: 70) {
+            //                        VStack {
+            //                            Text("User")
+            //                                .font(.title2.bold())
+            //                            ChoiceImage(of: "rock", 36)
+            //                        }
+            //
+            //                        Text("vs")
+            //                            .font(.title2.bold())
+            //                        VStack {
+            //                            Text("Computer")
+            //                                .font(.title2.bold())
+            //                            ChoiceImage(of: "paper", 36)
+            //                        }
+            //                    }
+            //                }
+            //            }
+            
         }
     }
 }
