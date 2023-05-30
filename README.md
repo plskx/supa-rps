@@ -14,6 +14,6 @@ Supa-rps - Rock paper scissor w/ Supabase
 
 <p align="center">
 
-<img src="https://github.com/plskx/supa-rps/assets/57343545/e12123e5-d5c5-478a-be8d-256ffcb0a4ba" alt="Supa-rps demo" height="900">
+<img src="https://github.com/plskx/supa-rps/assets/57343545/36329330-db26-432b-9c74-cf0474b73578" alt="Supa-rps demo" height="900">
 
 </p>
