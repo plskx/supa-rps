@@ -37,9 +37,6 @@ struct ContentView: View {
                 self.currentUser = currentUser!
                 
                 isLoggedIn = true
-            } else {
-                // Session doesn't exist, user is logged out
-                self.currentUser = nil
             }
         } catch {
             print("Error fetching session: \(error)")
