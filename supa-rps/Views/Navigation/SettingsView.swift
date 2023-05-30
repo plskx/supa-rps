@@ -8,6 +8,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Binding var isLoggedIn: Bool
+    @Binding var currentUser: User?
     
     var body: some View {
         
@@ -33,6 +34,7 @@ struct SettingsView: View {
             do {
                 try await client.auth.signOut()
                 self.isLoggedIn = false
+                self.currentUser = nil
                 print("Successful logout!")
             }
             catch {
@@ -46,6 +48,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(isLoggedIn: .constant(true))
+        SettingsView(isLoggedIn: .constant(true), currentUser: .constant(User.example))
     }
 }

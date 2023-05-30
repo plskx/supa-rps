@@ -9,7 +9,7 @@ import GoTrue
 
 struct ContentView: View {
     @State private var isLoggedIn: Bool = false
-    @State private var currentUser: User = User.error
+    @State private var currentUser: User? = nil
     
     var body: some View {
         Group {
@@ -37,6 +37,9 @@ struct ContentView: View {
                 self.currentUser = currentUser!
                 
                 isLoggedIn = true
+            } else {
+                // Session doesn't exist, user is logged out
+                self.currentUser = nil
             }
         } catch {
             print("Error fetching session: \(error)")

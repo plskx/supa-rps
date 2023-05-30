@@ -8,7 +8,7 @@ import SwiftUI
 
 struct LoginView: View {
     @Binding var isLoggedIn: Bool
-    @Binding var currentUser: User
+    @Binding var currentUser: User?
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -97,7 +97,7 @@ struct LoginView: View {
         return loginFormError.email.isEmpty && loginFormError.password.isEmpty
     }
     
-    private func login() {
+    func login() {
         Task {
             do {
                 let session = try await client.auth.signIn(email: email, password: password)
@@ -106,8 +106,6 @@ struct LoginView: View {
                 
                 let currentUser = await getCurrentUser(id: session.user.id)
                 self.currentUser = currentUser!
-                
-                print("Successful logged in!")
             } catch {
                 print("Error signing in: \(error)")
                 errorDescription = error.localizedDescription
