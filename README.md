@@ -6,7 +6,7 @@ Supa-rps - Rock paper scissor w/ Supabase
 
 <p align="center">
 
-![excalidraw-supa-rps](/.github/excalidraw-supa-rps.png)
+<img src=".github/excalidraw-supa-rps.png" alt="Excalidraw-Supa-rps" width="1624">
 
 </p>
 
