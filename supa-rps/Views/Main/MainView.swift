@@ -10,7 +10,7 @@ struct MainView: View {
     @Binding var isLoggedIn: Bool
     @Binding var currentUser: User?
     
-    @State private var selectedTab: Tab = .game
+    @State private var selectedTab: Tab = .home
     
     var body: some View {
         VStack(spacing: 70) {
