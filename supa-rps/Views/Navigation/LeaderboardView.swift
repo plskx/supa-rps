@@ -7,42 +7,67 @@
 import SwiftUI
 
 struct LeaderboardView: View {
+    @State var leaderboard: Leaderboard? = nil
     
     var body: some View {
         VStack {
             Text("Leaderboard")
                 .gradientTitle()
             
-//            List(users) { user in
-//                HStack {
-//                    Text(user.username)
-//                        .font(.headline)
-//                        .foregroundColor(.primary)
-//                    
-//                    Spacer()
-//                    
-//                    VStack(alignment: .trailing) {
-//                        Text("\(user.totalWins) - \(user.totalLosses)")
-//                            .font(.subheadline)
-//                            .foregroundColor(.secondary)
-//                        
-//                        Text("Last match: \(user.lastMatchTime)")
-//                            .font(.caption)
-//                            .foregroundColor(.secondary)
-//                    }
-//                }
-//            }
-//            .listStyle(.plain)
-//            .padding(.top, 20)
+            if let leaderboard = leaderboard {
+                List(leaderboard.users) { user in
+                    HStack {
+                        Text(user.username)
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                        
+                        Spacer()
+                        
+                        VStack {
+                            Text("\(user.totalPoints)")
+                                .font(.headline)
+                            
+                            HStack {
+                                Text("\(user.totalWins)")
+                                    .foregroundColor(.green)
+                                Text("-")
+                                Text("\(user.totalLosses)")
+                                    .foregroundColor(.red)
+                            }
+                            .font(.subheadline)
+                        }
+                        
+                    }
+                }
+                .listStyle(.plain)
+                .padding(.top, 20)
+            } else {
+                Spacer()
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(3)
+            }
             
             Spacer()
         }
+        .onAppear {
+            populateGetLeaderboard()
+        }
+        .refreshable {
+            populateGetLeaderboard()
+        }
     }
     
+    private func populateGetLeaderboard() {
+        Task {
+            leaderboard = await getLeaderboard()
+        }
+    }
 }
 
 struct LeaderboardView_Previews: PreviewProvider {
     static var previews: some View {
-        LeaderboardView()
+        LeaderboardView(leaderboard: .example)
+        //        LeaderboardView(leaderboard: nil)
     }
 }
