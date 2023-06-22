@@ -2,6 +2,8 @@
 
 Supa-rps - Rock paper scissor w/ Supabase
 
+See [plskx/leaderboard-rps-web](https://github.com/plskx/leaderboard-rps-web) for web leaderboard history
+
 <samp>**Excalidraw**: [https://dub.sh/supa-rps](https://dub.sh/supa-rps)</samp>
 
 <p align="center">
